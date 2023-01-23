@@ -1,9 +1,10 @@
 #!/bin/bash
 
 while true; do
-  read -p "Introduce un valor del día numérico del mes (de 1 a 30): " dia
-  if [ $ia -ge 1 ] && [ $dia -le 30 ]; then
-    dia_semana=$(((dia + 6) % 7))
+  echo "Introduce un valor del día numérico del mes (de 1 a 30): " 
+  read dia
+  if [ $dia -ge 1 ] && [ $dia -le 30 ]; then
+  let dia_semana=$(((dia + 6) % 7))
     case $dia_semana in
       0) echo "Domingo";;
       1) echo "Lunes";;
@@ -18,3 +19,4 @@ while true; do
     echo "Valor fuera del rango. Inténtalo de nuevo."
   fi
 done
+sleep 5
